@@ -1,5 +1,8 @@
 import express, { json } from 'express';
 
+
+import * as moviesController from "./controllers/movies"
+
 const PORT = 8080;
 const app = express();
 
@@ -9,7 +12,9 @@ const app = express();
 
 // ROUTES 
 
-
+app.get("/api/movies", async (req, res) => {
+	moviesController.getAll(req, res)
+})
 
 // SERVER 
 
